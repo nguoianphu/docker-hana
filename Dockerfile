@@ -5,6 +5,12 @@ FROM opensuse
 
 MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 
+
+# Install tools
+RUN set -x \
+ && zypper install -y curl openssl
+
+
 # Download HANA
 
 ## SAP HANA 2.0, express edition download manager
