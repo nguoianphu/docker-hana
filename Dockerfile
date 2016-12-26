@@ -35,7 +35,9 @@ RUN set -x \
 # Install HANA
 
 RUN set -x \
- && /opt/tmp/HXEDownloadManager_linux.bin
+ && cd /opt/tmp/ \
+ && chmod +x *.bin \
+ && HXEDownloadManager_linux.bin
 
 
 # ENTRYPOINT ["/docker-entrypoint.sh"]
