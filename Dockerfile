@@ -21,7 +21,7 @@ MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 
 RUN set -x \
  && mkdir -p /opt/tmp/ \
- && cd /opt/tmp/
+ && cd /opt/tmp/ \
  && curl -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager_linux.bin
  
 
