@@ -8,7 +8,9 @@ MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 
 # Install tools
 RUN set -x \
- && zypper install -y curl openssl
+ && cat /etc/os-release \
+ && zypper install -y curl openssl \
+ && zypper search java | grep java-1_8
 
 
 # Download HANA
@@ -28,7 +30,8 @@ RUN set -x \
 RUN set -x \
  && mkdir -p /opt/tmp/ \
  && cd /opt/tmp/ \
- && curl -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager_linux.bin
+ && curl -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager_linux.bin \
+ && curl -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
  
 
 
@@ -36,7 +39,8 @@ RUN set -x \
 
 RUN set -x \
  && cd /opt/tmp/ \
- && chmod +x *.bin \
+ && chmod +x HXEDownloadManager* \
+ && java -jar HXEDownloadManager.jar \
  && ./HXEDownloadManager_linux.bin
 
 
