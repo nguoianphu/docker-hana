@@ -1,0 +1,25 @@
+sudo: required
+services:
+  - docker
+
+script:
+  - echo "Build local image"
+  - docker build -t hana .
+  - docker images
+  - docker run --name my-hana -d -p 5000:5000 hana
+  - echo "Wait hana to start up"    
+  - docker ps -a  
+  - docker logs my-hana
+  - docker exec -it my-hana ps -ef
+  - echo "Checking hana"
+  # - docker exec -it my-hana isql -U sa -P myPass -S MYSYBASE
+  - docker stop my-hana
+  - echo "Testing public image on Docker Hub"
+  - docker run -d -p 5000:5000  --name nguoianphu-hana nguoianphu/docker-hana
+  - docker ps -a
+  - docker images
+  - echo "Checking hana"  
+  - docker logs nguoianphu-hana
+  - docker exec -it nguoianphu-hana ps -ef
+  # - docker exec -it nguoianphu-hana isql -U sa -P myPass -S MYSYBASE  
+  - docker stop nguoianphu-hana
