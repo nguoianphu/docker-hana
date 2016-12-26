@@ -42,7 +42,7 @@ RUN set -x \
 RUN set -x \
  && mkdir -p /opt/tmp/ \
  && cd /opt/tmp/ \
- && curl -OLS https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz
+ && curl -v -OLS https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz
 
 # Install HANA
 
