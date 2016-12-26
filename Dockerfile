@@ -9,8 +9,7 @@ MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 # Install tools
 RUN set -x \
  && cat /etc/os-release \
- && zypper install -y curl openssl \
- && zypper search java | grep java-1_8
+ && zypper install -y curl openssl java-1_8_0-openjdk-devel
 
 
 # Download HANA
