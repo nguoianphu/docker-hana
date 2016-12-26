@@ -9,7 +9,7 @@ MAINTAINER Tuan Vo <vohungtuan@gmail.com>
 # Install tools
 RUN set -x \
  && cat /etc/os-release \
- && zypper install -y curl tar openssl java-1_8_0-openjdk-devel
+ && zypper install -y curl tar gzip openssl java-1_8_0-openjdk-devel
 
 
 # Download HANA
@@ -48,7 +48,8 @@ RUN set -x \
 
 RUN set -x \
  && cd /opt/tmp/ \
- && tar -xvzf hxe.tgz \
+ && ls -la \
+ && tar zxvf hxe.tgz \
  && ls -la \
  && ls -Rla
 
