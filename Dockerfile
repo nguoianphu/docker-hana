@@ -37,7 +37,7 @@ RUN set -x \
 RUN set -x \
  && cd /opt/tmp/ \
  && chmod +x *.bin \
- && HXEDownloadManager_linux.bin
+ && ./HXEDownloadManager_linux.bin
 
 
 # ENTRYPOINT ["/docker-entrypoint.sh"]
