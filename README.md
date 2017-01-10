@@ -6,13 +6,16 @@
 ## SAP HANA 2.0, express edition download manager
         https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/typ.html
 
-Linux        
+Linux
+
         https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager_linux.bin
 
 Windows
+
         https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager_win.exe
 
 Platform-independent
+
         https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
 
 
@@ -27,20 +30,3 @@ Platform-independent
         
         # or
         docker run -d -p 8000:5000 -p 8001:5001 --name nguoianphu-hana nguoianphu/docker-hana
-        
-#### Check isql
-
-        docker exec -it my-hana /bin/bash
-        
-        source /opt/hana/hana.sh
-        isql -U sa -P myPassword -S MYSYBASE
-        
-        select @@version
-        go
-        
-### Mount licenses
-
-        docker run -d -p 8000:5000 -p 8001:5001 -v /path/to/sybase_licenses:/opt/hana/SYSAM-2_0/licenses --name my-hana hana
-        
-        # or
-        docker run -d -p 8000:5000 -p 8001:5001 -v /path/to/sybase_licenses:/opt/hana/SYSAM-2_0/licenses --name nguoianphu-hana nguoianphu/docker-hana
