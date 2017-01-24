@@ -7,8 +7,8 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
   # - java -jar HXEDownloadManager-01.jar
-  # - curl -v -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
-  - wget -d --referer=https://go.sap.com https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
+  # - curl -v -OLS https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz
+  - wget -d --referer=https://go.sap.com https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz
   - java -jar HXEDownloadManager.jar
   
 script:
