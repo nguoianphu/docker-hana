@@ -8,6 +8,7 @@ before_script:
   - sleep 3 # give xvfb some time to start
   - curl -v -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
   - java -jar HXEDownloadManager.jar
+  - java -jar HXEDownloadManager-01.jar
   
 script:
   - echo "Build local image"
