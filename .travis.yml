@@ -6,8 +6,9 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 # give xvfb some time to start
-  - java -jar HXEDownloadManager-01.jar
-  - curl -v -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
+  # - java -jar HXEDownloadManager-01.jar
+  # - curl -v -OLS https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
+   - wget --referer=https://go.sap.com https://d149oh3iywgk04.cloudfront.net/dwnldmgr/HANA2latest/HXEDownloadManager.jar
   - java -jar HXEDownloadManager.jar
   
 script:
