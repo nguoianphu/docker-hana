@@ -5,11 +5,11 @@ services:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+  - "sleep 3"
+  - "wget -d --head="Host: localhost" --referer=https://go.sap.com https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz"
   # - java -jar HXEDownloadManager-01.jar
   # - curl -v -OLS https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz
-  - wget -d --head="Host: localhost" --referer=https://go.sap.com https://d149oh3iywgk04.cloudfront.net/hanaexpress/HANA2latest/linuxx86-64/tar/hxe.tgz
-  - java -jar HXEDownloadManager.jar
+  # - java -jar HXEDownloadManager.jar
   
 script:
   - echo "Build local image"
